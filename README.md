@@ -79,4 +79,5 @@ Após a criação da tabela, podemos adicionar novos campos. Vamos adicionar uma
 ALTER TABLE autor
 ADD COLUMN email VARCHAR(100);
 
+
 ```
