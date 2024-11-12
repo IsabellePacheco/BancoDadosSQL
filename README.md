@@ -52,7 +52,7 @@ CREATE TABLE assunto(
 CREATE TABLE livro(
     id_livro INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(150) NOT NULL, 
-    ano_publicacao YEAR,
+    ano_publicacao INT(4),
     editora INT,
     autor INT,
     assunto INT, 
@@ -127,4 +127,6 @@ VALUES
 ('A Biblioteca da Meia-Noite',2020,3,3,2 )
 ('Memórias Póstumas de Brás Cubas',1881,1,2,4);
 ```
+
+## Passo 5: Atualizando os dados usando 'UPDATE'
 
