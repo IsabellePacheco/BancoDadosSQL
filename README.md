@@ -36,7 +36,7 @@ CREATE TABLE editora(
 ```SQL
 CREATE TABLE autor(
     id_autor INT PRIMARY KEY AUTO_INCREMENT,
-    nome_autor VARCHAR(200);
+    nome_autor VARCHAR(200),
     data_nascimento DATE
 );
 ```
@@ -54,7 +54,7 @@ CREATE TABLE livro(
     id_livro INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(150) NOT NULL, 
     ano_publicacao YEAR,
-    editora IN,
+    editora INT,
     autor INT,
     assunto INT, 
     FOREIGN KEY (editora) REFERENCES editora(id_editora),
@@ -78,16 +78,44 @@ CREATE TABLE extra(
 ## Passo 2: Editar tabelas usando 'ALTER'
 Após a criação da tabela, podemos adicionar novos campos. Vamos adicionar uma coluna 'email' na tabela 'autor'
 Altera a tabela
-
 ``` SQL
 ALTER TABLE autor
 ADD COLUMN email VARCHAR(100);
 ```
+
 ## Passo 3: Remover tabela usando 'DROP'
 Seprecisar remover uma tabela usamos o comando 'DROP'. Neste exemplo vamos remover a tabela 'extra'. 
-
 ```SQL
 DROP TABLE extra;
 ```
 
-## Passo 4: 
+## Passo 4: Inserindo dados usando 'INSERT'
+Agora que as tabelas já estão prontas, vamos inserir dados nelas.
+
+#### 4.1 Inserindo dados na tabela 'editora'
+```SQL
+INSERT INTO editora(nome_editora, pais)
+VALUES 
+('Editora Alfa', 'Brasil'),
+('Editora Beta', 'Portugual'),
+('Editora Bertrand Brasil', 'Brasil')
+```
+
+#### 4.2 Inserindo dados na tabela 'autor'
+``` SQL
+INSERT INTO autor (nome_autor, data_nascimento, email)
+VALUES
+('Jorge Amado', '1912-08-10' ,'jorginho@gmail.com'),
+('Machado de Assis', '1839-06-21' ,'machadinho@gmail.com'),
+('Matt Haig', '1975-06-03' ,'matt@gmail.com');
+```
+
+#### 4.3 Inserindo dados na tabela 'assunto'
+```SQL
+INSERT INTO assunto(descricao_assunto)
+VALUES 
+('Ficcção'),
+('Mistério'),
+('Terror'),
+('Romance');
+```
