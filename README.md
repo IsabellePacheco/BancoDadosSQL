@@ -54,9 +54,12 @@ CREATE TABLE livro(
     id_livro INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(150) NOT NULL, 
     ano_publicacao YEAR,
-    FOREING KEY (id_editora) REFERENCES editora(id_editora),
-    FOREING KEY (id_autor) REFERENCES autor(id_autor),
-    FOREING KEY (id_assunto) REFERENCE assunto(id_assunto)
+    editora IN,
+    autor INT,
+    assunto INT, 
+    FOREIGN KEY (editora) REFERENCES editora(id_editora),
+    FOREIGN KEY (autor) REFERENCES autor(id_autor),
+    FOREIGN KEY (assunto) REFERENCES assunto(id_assunto)
 );
 ```
 
@@ -74,10 +77,17 @@ CREATE TABLE extra(
 
 ## Passo 2: Editar tabelas usando 'ALTER'
 Após a criação da tabela, podemos adicionar novos campos. Vamos adicionar uma coluna 'email' na tabela 'autor'
+Altera a tabela
 
 ``` SQL
 ALTER TABLE autor
 ADD COLUMN email VARCHAR(100);
-
-
 ```
+## Passo 3: Remover tabela usando 'DROP'
+Seprecisar remover uma tabela usamos o comando 'DROP'. Neste exemplo vamos remover a tabela 'extra'. 
+
+```SQL
+DROP TABLE extra;
+```
+
+## Passo 4: 
