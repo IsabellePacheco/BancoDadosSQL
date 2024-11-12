@@ -17,7 +17,6 @@ Este guia será dividido em etapas para demonstrar desde a criação de tabelas,
 
 ## Paaso 1: Criação do Banco de Dados e das Tabelas 
 #### 1.1 Criando o DB 
-
 ``` SQL
 CREATE DATABASE biblioteca ;
 USE biblioteca;
@@ -65,7 +64,6 @@ CREATE TABLE livro(
 
 #### 1.6 Crindo uma tabela EXTRA
 A tabela EXTRA vai servir para exemplificar a exclusão
-
 ```SQL
 CREATE TABLE extra(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -114,8 +112,19 @@ VALUES
 ```SQL
 INSERT INTO assunto(descricao_assunto)
 VALUES 
-('Ficcção'),
+('Ficção'),
 ('Mistério'),
 ('Terror'),
 ('Romance');
 ```
+
+#### 4.4 Inserindo dados na tabela 'livro'
+```SQL
+INSERT INTO livro(titulo, ano_publicacao, editora, autor, assunto)
+VALUES 
+('Capitães de Areia',1937,1,1,4),
+('DOM Casmurro',1899,2,2,4)
+('A Biblioteca da Meia-Noite',2020,3,3,2 )
+('Memórias Póstumas de Brás Cubas',1881,1,2,4);
+```
+
